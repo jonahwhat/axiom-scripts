@@ -1,3 +1,7 @@
+-- a simple parkour generator
+-- generates parkour in the north direction starting where you click
+-- adjust the hard jump weight to determine how often difficult jumps are added to the parkour (4 block jumps etc.)
+
 $once$
 
 -- variables
