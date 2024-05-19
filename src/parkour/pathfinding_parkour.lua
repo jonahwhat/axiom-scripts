@@ -1,6 +1,5 @@
--- a simple parkour generator
--- generates parkour in the north direction starting where you click
--- adjust the hard jump weight to determine how often difficult jumps are added to the parkour (4 block jumps etc.)
+-- attempts to pathfind around mountains and hilly terrain
+-- will occasionally place a parkour block on top of another one if the terrain is too steep
 
 $once$
 
@@ -36,9 +35,13 @@ local JUMP_TABLE = {
     {1, 1, -3},
     {1, 1, -3},
     {2, 1, -3},
+    {3, 1, -2},
+    {3, 1, -1},
     {-1, 1, -3},
     {-1, 1, -3},
     {-2, 1, -3},
+    {-3, 1, -2},
+    {-3, 1, -1},
     {0, 0, -4},
     {0, 0, -4},
     {0, 0, -4},
@@ -52,6 +55,20 @@ local JUMP_TABLE = {
     {1, -4, -6},
     {-1, -4, -6},
     {0, -3, -5},
+}
+
+local SIDEWAYS_JUMPS = {
+    {-3, 1, -2},
+    {-3, 1, -1},
+    {3, 1, -2},
+    {3, 1, -1},
+}
+
+local BACKWARDS_JUMPS = {
+    {-3, 1, 0},
+    {3, 1, 0},
+    {-3, 1, 1},
+    {3, 1, -1},
 }
 
 local HARD_JUMPS = {
@@ -68,7 +85,7 @@ local y1 = y + 1
 local z1 = z
 
 local Y_THRESHOLD = y + 2
-local MAX_ITERATIONS = 100
+local MAX_ITERATIONS = 200
 
 function getNewBlock(x1, y1, z1)
 
@@ -80,6 +97,10 @@ function getNewBlock(x1, y1, z1)
         -- add hard jumps to the jump pool if enabled
         if math.random() <= hard_jump_weight then
             next_block = HARD_JUMPS[math.random(#HARD_JUMPS)]
+        elseif i >= 100 and i <= 150 then
+            next_block = SIDEWAYS_JUMPS[math.random(#SIDEWAYS_JUMPS)]
+        elseif i >= 150 then
+            next_block = BACKWARDS_JUMPS[math.random(#BACKWARDS_JUMPS)]
         else
             next_block = JUMP_TABLE[math.random(#JUMP_TABLE)]
         end
