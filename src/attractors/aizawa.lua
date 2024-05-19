@@ -1,21 +1,21 @@
 -- langford/aizawa attractor
 -- https://www.dynamicmath.xyz/strange-attractors/
+-- https://syntopia.github.io/StrangeAttractors/
+
 $once$
 
--- variables
 local size = $int(Size,50,1,100)$
-local y_offset = $int(Y Offset,50,1,100)$
-local block = $blockState(Block, stone)$
-local step_size = 0.01
-local num_points = 20000
+local block = $blockState(Block, verdant_froglight)$
+local a = $float(a, 0.95, 0.0, 1.0)$
+local b = $float(b, 0.7, 0.0, 1.0)$
+local c = $float(c, 0.6, 0.0, 3.0)$
+local d = $float(d, 3.5, 0.0, 17.5)$
+local e = $float(e, 0.25, 0.0, 1.0)$
+local f = $float(f, 0.1, 0.0, 0.5)$
 
--- constants
-local a = 0.95
-local b = 0.7
-local c = 0.6
-local d = 3.5
-local e = 0.25
-local f = 0.1
+local step_size = 0.001
+local num_points = 200000
+local y_offset = y + 100 + (50 * a)
 
 -- starting position
 local x_t = 0.1
