@@ -8,7 +8,7 @@ local size = $float(Size, 2.5, 0.5, 5)$
 local sigma = $int(Sigma, 10, 0, 100)$
 local rho = $int(Rho, 28, 0, 100)$
 local beta = $float(Beta, 2.666666666, -1.0, 10.0)$
-local block = $blockState(Block, stone)$
+local block = $blockState(Block, verdant_froglight)$
 
 -- constants
 local num_points = 10000

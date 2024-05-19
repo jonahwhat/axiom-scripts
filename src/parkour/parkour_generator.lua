@@ -98,6 +98,10 @@ for i=1, length_of_parkour do
 
     local block = BLOCK_LIST[(i % #BLOCK_LIST) + 1]
 
+    if i == length_of_parkour then
+        block = blocks.gold_block
+    end
+
     setBlock(x1, y1, z1, block)
 end
 

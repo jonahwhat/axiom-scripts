@@ -3,7 +3,9 @@ https://axiom.moulberry.com/
 
 ## Adding Scripts to Axiom
 1. Locate your script brush folder. This is what the path is for me: `C:\Users\your_name\AppData\Roaming\.minecraftAxiom\config\axiom\tool_presets\script_brush`
-2. Copy the lua files of your choice into this folder
+2. Copy the nbt files of your choice into this folder
+
+> Alternatively, you can copy the lua source code directly into the script brush in game (this seems easier to me)
 
 ## Using Scripts
 1. Open Editor Mode in Axiom
