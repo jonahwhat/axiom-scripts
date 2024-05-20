@@ -1,5 +1,6 @@
 # Script Brushes for Axiom
-https://axiom.moulberry.com/
+## Script Brush Docs
+https://axiomdocs.moulberry.com/tools/painting/scriptbrush.html
 
 ## Adding Scripts to Axiom
 1. Locate your script brush folder. This is what the path is for me: `C:\Users\your_name\AppData\Roaming\.minecraftAxiom\config\axiom\tool_presets\script_brush`
