@@ -1,16 +1,11 @@
 -- Script that converts lava blocks to water blocks
 -- Unchecking the tickbox will reverse the script so it changes water to lava instead
 
-lavaToWater=$boolean(Lava To Water, true)$
+lavaToWater=$boolean(Lava To Water?, true)$
 states = 7
 
-toBlock = blocks.water
-fromBlock = blocks.lava
-
-if not lavaToWater then
-    toBlock = blocks.lava
-    fromBlock = blocks.water
-end
+toBlock = lavaToWater and blocks.water or blocks.lava
+fromBlock = lavaToWater and blocks.lava or blocks.water
 
 for i = 0, states do
     if getBlock(x,y,z) == fromBlock and getBlockProperty(getBlockState(x,y,z), "Level") == tostring(i) then
