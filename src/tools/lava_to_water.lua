@@ -4,17 +4,16 @@
 lavaToWater=$boolean(Lava To Water, true)$
 states = 7
 
-if lavaToWater then
-    for i = 0, states do
-        if getBlock(x,y,z) == blocks.lava and getBlockProperty(getBlockState(x,y,z), "Level") == tostring(i) then
-            return withBlockProperty(blocks.water,"level=".. i)
-        end
-    end
+toBlock = blocks.water
+fromBlock = blocks.lava
 
-else
-    for i = 0, states do
-        if getBlock(x,y,z) == blocks.water and getBlockProperty(getBlockState(x,y,z), "Level") == tostring(i) then
-            return withBlockProperty(blocks.lava,"level=".. i)
-        end
+if not lavaToWater then
+    toBlock = blocks.lava
+    fromBlock = blocks.water
+end
+
+for i = 0, states do
+    if getBlock(x,y,z) == fromBlock and getBlockProperty(getBlockState(x,y,z), "Level") == tostring(i) then
+        return withBlockProperty(toBlock,"level=".. i)
     end
 end
