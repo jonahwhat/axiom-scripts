@@ -2,7 +2,7 @@
 -- Unchecking the tickbox will reverse the script so it changes water to lava instead
 
 lavaToWater=$boolean(Lava To Water?, true)$
-states = 7
+states = 15
 
 toBlock = lavaToWater and blocks.water or blocks.lava
 fromBlock = lavaToWater and blocks.lava or blocks.water
