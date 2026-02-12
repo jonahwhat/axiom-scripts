@@ -1,0 +1,12 @@
+-- Java source code for axiom splatter noise
+
+--   public float evaluate(double x, double y) {
+--     float simplex = this.simplexNoise.evaluate(x, y);
+--     float white = this.whiteNoise.evaluate(x * this.scaleX, y * this.scaleY) * 0.4F + 0.3F;
+--     if (white < 0.5D) {
+--       white *= 2.0F;
+--       return simplex * white;
+--     } 
+--     white = (white - 0.5F) * 2.0F;
+--     return simplex * (1.0F - white) + white;
+--   }
