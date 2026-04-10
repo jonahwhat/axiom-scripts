@@ -5,6 +5,10 @@ local block = $blockState(Block, horizon:bush_haven)$
 local dense = $blockState(Block, horizon:bush_haven_dense)$
 local frilly = $blockState(Block, horizon:bush_haven_frilly)$
 
+-- Idea:
+-- Start from single block with dense, iterate outwards to add bush, then add frilly rarely
+-- Roots: function that takes a block and places a block below (for ground) then places correctly rotated thing 
+
 -- Check if target block is air
 if getBlock(x, y, z) ~= blocks.air then
 	return nil
