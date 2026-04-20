@@ -1,4 +1,3 @@
--- Axiom Variables
 local maximum_length = $int(Maximum Length,6,1,16)$
 local density = $float(Placement Chance, 0.35, 0.1, 1.0)$
 
