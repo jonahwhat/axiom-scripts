@@ -61,7 +61,7 @@ elseif place_hanging_roots then
 end
 
 
-if do_corner then
+if do_corner and nearby_blocks >= 1 then
     setBlock(x,y,z, withBlockProperty(corner, block_property))
 end
 
