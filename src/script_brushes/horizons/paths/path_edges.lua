@@ -41,38 +41,38 @@ end
 -- Case if >2 edges border grass
 if blocks_surrounding >= 2 then
     if north and east then
-        temp_block = withBlockProperty(path_corner, "blaze_cardinal_direction=east")
+        temp_block = withBlockProperty(path_corner, "facing=east")
     end
 
     if north and west then
-        temp_block = withBlockProperty(path_corner, "blaze_cardinal_direction=north")
+        temp_block = withBlockProperty(path_corner, "facing=north")
     end
 
     if south and east then
-        temp_block = withBlockProperty(path_corner, "blaze_cardinal_direction=south")
+        temp_block = withBlockProperty(path_corner, "facing=south")
     end
 
     if south and west then
-        temp_block = withBlockProperty(path_corner, "blaze_cardinal_direction=west")
+        temp_block = withBlockProperty(path_corner, "facing=west")
     end
 
 
 -- Case if only 1 edge borders grass
 elseif blocks_surrounding == 1 then
     if north then
-        temp_block = withBlockProperty(path_edge, "blaze_cardinal_direction=north")
+        temp_block = withBlockProperty(path_edge, "facing=north")
     end
 
     if south then
-        temp_block = withBlockProperty(path_edge, "blaze_cardinal_direction=south")
+        temp_block = withBlockProperty(path_edge, "facing=south")
     end
 
     if east then
-        temp_block = withBlockProperty(path_edge, "blaze_cardinal_direction=east")
+        temp_block = withBlockProperty(path_edge, "facing=east")
     end
 
     if west then
-        temp_block = withBlockProperty(path_edge, "blaze_cardinal_direction=west")
+        temp_block = withBlockProperty(path_edge, "facing=west")
     end
 end
 
