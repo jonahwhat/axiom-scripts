@@ -14,14 +14,14 @@ if getBlock(x, y, z) == path then
 end
 
 -- Replace edge and corners
-if getBlockProperty(getBlockState(x, y, z), "blaze_cardinal_direction") then
+if getBlockProperty(getBlockState(x, y, z), "facing") then
     if getBlock(x, y, z) == path_edge then
-        local direction = getBlockProperty(getBlockState(x, y, z), "blaze_cardinal_direction")
-        return withBlockProperty(trodden_edge, "blaze_cardinal_direction=" .. direction)
+        local direction = getBlockProperty(getBlockState(x, y, z), "facing")
+        return withBlockProperty(trodden_edge, "facing=" .. direction)
     end
     if getBlock(x, y, z) == path_corner then
-        local direction = getBlockProperty(getBlockState(x, y, z), "blaze_cardinal_direction")
-        return withBlockProperty(trodden_corner, "blaze_cardinal_direction=" .. direction)
+        local direction = getBlockProperty(getBlockState(x, y, z), "facing")
+        return withBlockProperty(trodden_corner, "facing=" .. direction)
     end
 end
 

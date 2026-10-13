@@ -11,12 +11,12 @@ local corner_vine = blocks.horizon.sylvan_ivy_corner
 local bottom_vine = blocks.horizon.sylvan_ivy_bottom
 
 local directions = {"north", "west", "south", "east"}
-local random_vine = withBlockProperty(blocks.horizon.sylvan_ivy, "blaze_cardinal_direction=" .. directions[math.random(#directions)])
+local random_vine = withBlockProperty(blocks.horizon.sylvan_ivy, "facing=" .. directions[math.random(#directions)])
 
 local length_modifier = math.random() * 0.5
 local calculated_length = math.floor(maximum_length - (maximum_length * length_modifier))
 
-local block_property = "blaze_cardinal_direction=north"
+local block_property = "facing=north"
 local nearby_blocks = 0
 corner_found = false
 top_found = false
@@ -29,19 +29,19 @@ end
 
 -- Check for valid sides
 if isSolid(getBlock(x, y, z-1)) then
-    block_property = "blaze_cardinal_direction=north"
+    block_property = "facing=north"
     nearby_blocks = nearby_blocks + 1
 end
 if isSolid(getBlock(x, y, z+1)) then
-    block_property = "blaze_cardinal_direction=south"
+    block_property = "facing=south"
     nearby_blocks = nearby_blocks + 1
 end
 if isSolid(getBlock(x+1, y, z)) then
-    block_property = "blaze_cardinal_direction=east"
+    block_property = "facing=east"
     nearby_blocks = nearby_blocks + 1
 end
 if isSolid(getBlock(x-1, y, z)) then
-    block_property = "blaze_cardinal_direction=west"
+    block_property = "facing=west"
     nearby_blocks = nearby_blocks + 1
 end
 

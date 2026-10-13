@@ -23,24 +23,24 @@ if not (isSolid(getBlock(x, y+1, z)) and getBlock(x,y,z) == blocks.air) then
     return nil
 end
 
-local block_property = "blaze_cardinal_direction=north"
+local block_property = "facing=north"
 local nearby_blocks = 0
 
 -- Check for valid sides
 if isSolid(getBlock(x, y, z-1)) then
-    block_property = "blaze_cardinal_direction=north"
+    block_property = "facing=north"
     nearby_blocks = nearby_blocks + 1
 end
 if isSolid(getBlock(x, y, z+1)) then
-    block_property = "blaze_cardinal_direction=south"
+    block_property = "facing=south"
     nearby_blocks = nearby_blocks + 1
 end
 if isSolid(getBlock(x+1, y, z)) then
-    block_property = "blaze_cardinal_direction=east"
+    block_property = "facing=east"
     nearby_blocks = nearby_blocks + 1
 end
 if isSolid(getBlock(x-1, y, z)) then
-    block_property = "blaze_cardinal_direction=west"
+    block_property = "facing=west"
     nearby_blocks = nearby_blocks + 1
 end
 

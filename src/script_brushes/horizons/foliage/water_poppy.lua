@@ -26,7 +26,7 @@ local directions = {
     "east"
 }
 
-local randFlower = withBlockProperty(flower, "blaze_cardinal_direction=" .. directions[math.random(#directions)])
+local randFlower = withBlockProperty(flower, "facing=" .. directions[math.random(#directions)])
 
  
 if getBlock(x, y-1, z) == blocks.water and white < density and getBlock(x, y, z) == blocks.air and place_new_flowers then
@@ -60,7 +60,7 @@ end
 -- If 0 < blocks_surrounding < 1 then rotate to correct direction
 if blocks_surrounding <= 1 and getBlockProperty(getBlock(x,y,z), "blaze_count_6") ~= nil and rotate_flowers then
     block = getBlockState(x, y, z)
-    return withBlockProperty(block, "blaze_cardinal_direction=" .. nearest_direction)
+    return withBlockProperty(block, "facing=" .. nearest_direction)
 
 end
 -- If blocks_surrounding > 2 then add +1 to count of flowers

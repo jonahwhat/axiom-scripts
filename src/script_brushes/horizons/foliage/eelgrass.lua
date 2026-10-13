@@ -35,7 +35,7 @@ end
 if simplex < transformed then
 	if do_tall_grass and math.random() < tall_grassiness and getBlock(x,y+1,z) == blocks.water then
 
-		setBlock(x, y+1, z, withBlockProperty(eelgrass_tall, "blaze_half=upper"))
+		setBlock(x, y+1, z, withBlockProperty(eelgrass_tall, "minecraft_multi_block_part=1"))
 		return eelgrass_tall
 	else
 		return eelgrass_short

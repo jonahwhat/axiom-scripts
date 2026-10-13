@@ -36,8 +36,8 @@ end
 -- Update blocks based on noise
 if simplex - height < transformed/2 - 0.5 and math.random() < 0.45 then
 
-	setBlock(x, y+1, z, withBlockProperty(tall, "blaze_half=upper"))
-	setBlock(x,y,z, withBlockProperty(tall, "blaze_half=lower"))
+	setBlock(x, y+1, z, withBlockProperty(tall, "minecraft_multi_block_part=1"))
+	setBlock(x,y,z, withBlockProperty(tall, "minecraft_multi_block_part=0"))
 	return
 
 elseif simplex < transformed and height < white - 0.2 then
